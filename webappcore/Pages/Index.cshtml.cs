@@ -17,6 +17,9 @@ namespace webappcore.Pages {
 
         public IList<Customer> Customers { get; private set; }
 
+        [TempData]
+        public string Message { get; set; }
+
         public async Task OnGetAsync() {
             Customers = await this.db.Customers.AsNoTracking().ToListAsync(); 
         }
